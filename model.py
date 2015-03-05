@@ -31,20 +31,20 @@ class Station_Geohash(Base):
     station_id = Column(Integer, ForeignKey('stations.id'))
     geohash_loc = Column(String(50), nullable = False)
 
-# class Snow_Data(Base):
-#     __tablename__ = "snow_data"
+class Snow_Data(Base):
+    __tablename__ = "snow_data"
 
-#     id = Column(Integer, primary_key = True)
-#     station_id = Column(Integer, ForeignKey('stations.id'))
-#     sta_given_id = Column(String(25), nullable=True)
-#     source = Column(String(25), nullable = False)
-#     units = Column(String(10), nullable = False)
-#     date = Column(DateTime, nullable = False)
-#     depth = Column(Integer, nullable = False)
-#     depth_change = Column(Integer, nullable = True)
-#     water_equiv = Column(Float, nullable = True)
-#     water_equiv_change = Column(Float, nullable = True)
-#     station = relationship("Station", backref=backref("snow_data", order_by=id))
+    id = Column(Integer, primary_key = True)
+    station_id = Column(Integer, ForeignKey('stations.id'))
+    sta_given_id = Column(String(25), nullable=True)
+    source = Column(String(25), nullable = False)
+    units = Column(String(10), nullable = False)
+    date = Column(DateTime, nullable = False)
+    depth = Column(Integer, nullable = False)
+    depth_change = Column(Integer, nullable = True)
+    water_equiv = Column(Float, nullable = True)
+    water_equiv_change = Column(Float, nullable = True)
+    station = relationship("Station", backref=backref("snow_data", order_by=id))
 
 # class Alert(Base):
 #     __tablename__ = "alerts"
